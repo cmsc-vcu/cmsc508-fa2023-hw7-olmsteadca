@@ -12,9 +12,7 @@ format:
 
 (include a brief description of what is in this document)
 
-(Please clean up any comments that I included.  This is a scaffold document.)
-
-GITHUB URL:  <your URL goes here!>
+GITHUB URL:  <https://github.com/cmsc-vcu/cmsc508-fa2023-hw7-olmsteadca>
 
 ```{python}
 #| eval: true
@@ -99,7 +97,6 @@ except Exception as e:
 (add a description of the diagram and what the reader is seeing.)
 
 ```{mermaid}
-%%| echo: false
 erDiagram
     CUSTOMER ||--o{ ORDER : places
     CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
@@ -129,7 +126,6 @@ Below is a list of data in the *people* table.
 sql = f"""
 select * from people;
 """
-## Add code to list roles table here
 try:
     df = pd.read_sql(sql,cnx)
     df
@@ -150,7 +146,17 @@ Below is a list of data in the *skills* table.
 #| echo: false
 #| eval: true
 
-## Add code to list roles table here
+sql = f"""
+select * from skills;
+"""
+try:
+    df = pd.read_sql(sql,cnx)
+    df
+except Exception as e:
+    message = str(e)
+    print(f"An error occurred:\n\n{message}\n\nIgnoring and moving on.")
+    df = pd.DataFrame()
+df
 ```
 
 ### Roles table
@@ -163,9 +169,18 @@ Below is a list of data in the *roles* table.
 #| echo: false
 #| eval: true
 
-## Add code to list roles table here
+sql = f"""
+select * from roles;
+"""
+try:
+    df = pd.read_sql(sql,cnx)
+    df
+except Exception as e:
+    message = str(e)
+    print(f"An error occurred:\n\n{message}\n\nIgnoring and moving on.")
+    df = pd.DataFrame()
+df
 ```
-
 
 ## Sample queries
 
