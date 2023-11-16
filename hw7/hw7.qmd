@@ -1,10 +1,10 @@
 ---
 title: Homework 7 - Creating a resume database
-author: (your name goes here!)
-date: last-modified
+author: Celeste Olmstead
+date: 11/16/2023
 format:
     html:
-        theme: cosmo
+        theme: minty
         toc: true
         embed-resources: true
         code-copy: true
